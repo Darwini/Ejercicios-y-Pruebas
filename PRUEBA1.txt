@@ -2,52 +2,98 @@
 el usuario debe comprar dichos articulos,
 y debes imprimir el total de ventas con su iva"""
 
+
+
+
 print "\nESTO ES UN MERCADITO DE EJEMPLO (No aplica a la realidad de este pais) "
 
+
+
 def facturacion():
-        res="" 
-        compras=[]
-        d=0
-        print "Ingrese el Nombre del cliente:"
-        cn=raw_input()
-        cn=cn.upper()
-        if (len(cn)<=0):
-            print "El usuario no puede estar vacio"
-            facturacion()
+        
+	res="" 
+        
+	compras=[]
+        
+	d=0
+        
+	print "Ingrese el Nombre del cliente:"
+        
+		cn=raw_input()
+        
+		cn=cn.upper()
+        
+	if (len(cn)<=0):
             
-        print "Hola", cn,"Tenemos a disponibilidad estos Productos:\n"
-        print "(Se estara vendiendo uno(1) por cliente)"
-        productos={"Atun":2500,"Sardina":530 ,"Rikesa":850,"Mayonesa":500, "Salsa de Tomate":450, "Mantequilla":700 }
+		print "El usuario no puede estar vacio"
+            
+		facturacion()
+
+            
+        
+	print "Hola", cn,"Tenemos a disponibilidad estos Productos:\n"
+        
+	print "(Se estara vendiendo uno(1) por cliente)"
+        
+	
+	productos={"Atun":2500,"Sardina":530 ,"Rikesa":850,"Mayonesa":500, "Salsa de Tomate":450, "Mantequilla":700 }
     
-        for nombre,precio in productos.iteritems():
-            print nombre,"=",precio,'Bs\n'
-        for nombre,precio in productos.iteritems():
-                print "QUIERES COMPRAR",nombre,"...",precio,"bs"
-                print "Escriba SI o NO\n"
-                res=raw_input()
-                res=res.lower()
+        	
+	for nombre,precio in productos.iteritems():
+            
+		print nombre,"=",precio,'Bs\n'
+        
+	for nombre,precio in productos.iteritems():
+                
+		print "QUIERES COMPRAR",nombre,"...",precio,"bs"
+                
+		print "Escriba SI o NO\n"
+                
+		res=raw_input()
+                
+		res=res.lower()
                                 
             
-                if not res in('no', 'n', 's','si'):
-                   print "Esa opcion no esta Disponible, se considerara como no"
-                if res in ('n', 'no'):
-                   pass
+                
+		if not res in('no', 'n', 's','si'):
                    
-                elif res in ('si', 's'):
-                           d=d+precio
-                           compras.append(nombre)
-                           iva=(d*12)/100
-                           total=d+iva  
-        print "TU FACTURA", cn                
-        if (compras==[]):
-            print "No has Comprado Nada"
+			print "Esa opcion no esta Disponible, se considerara como NO"
+                
+		if res in ('n', 'no'):
+                   
+			pass
+                   
+                
+		elif res in ('si', 's'):
+                           
+			d=d+precio
+                           
+			compras.append(nombre)
+                           
+			iva=(d*12)/100
+                           
+			total=d+iva  
+        
+			print "TU FACTURA", cn                
+        
+	if (compras==[]):
             
-        else:
-            print "Tus compras son:", compras
-            print "El costo de tu compra es:",d
-            print "El Iva es:",iva
-            print "Total de Facturacion:",total,"\n"
+		print "No has Comprado Nada"
+            
+        
+	else:
+            
+		print "Tus compras son:", compras
+            
+		print "El costo de tu compra es:",d
+            
+		print "El Iva es:",iva
+
+		print "Total de Facturacion:",total,"\n"
            
             
      
+
+
 facturacion()
+
